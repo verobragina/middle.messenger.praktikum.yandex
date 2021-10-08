@@ -3,7 +3,7 @@ Messenger Project for Yandex.Practicum on pure JavaScript
 ### Link to Figma
 [Project Prototype](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1)
 ### Link to Netlify
-[Netlify]()
+[Netlify](https://wonderful-davinci-8c226d.netlify.app/)
 ### Link to PR
 [Pull Request]()
 ### Usage
@@ -32,14 +32,14 @@ npm run start
 
 **Server:** Express.js
 ### Template Pages
-1. [Login]()
+1. [Login](https://wonderful-davinci-8c226d.netlify.app/#login)
 
-2. [Registration]()
+2. [Registration](https://wonderful-davinci-8c226d.netlify.app/#registration)
 
-3. [Chats]()
+3. [Chats](https://wonderful-davinci-8c226d.netlify.app/#chats)
 
-4. [Profile]()
+4. [Profile](https://wonderful-davinci-8c226d.netlify.app/#profile)
 
-5. [404]()
+5. [404](https://wonderful-davinci-8c226d.netlify.app/#error404)
 
-6. [500]()
+6. [500](https://wonderful-davinci-8c226d.netlify.app/#error500)
