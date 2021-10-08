@@ -1,0 +1,26 @@
+@import "colors";
+
+@import "mixins";
+
+@import "fonts";
+
+@import "null";
+
+$fontFamily: "Inter", sans-serif;
+
+body {
+  font-family: $fontFamily;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+// Form Styles
+@import "form";
+// Form Styles End

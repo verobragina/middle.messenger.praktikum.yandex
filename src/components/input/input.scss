@@ -1,0 +1,23 @@
+@import "src/scss/colors";
+
+.input__wrapper {
+  margin-bottom: 10px;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .input__label {
+    color: $text-secondary;
+    font-size: 10px;
+    padding-bottom: 5px;
+  }
+
+  .input__field {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $main-color;
+    width: 100%;
+  }
+}
