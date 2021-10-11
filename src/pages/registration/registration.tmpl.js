@@ -1,5 +1,5 @@
 export default `
-  <div class="registration form__container">
+  <form action="" method="get" class="registration form__container">
       <div class="form__field">
           <h1 class="form__title">{{title}}</h1>
           {{#each input}}
@@ -10,5 +10,5 @@ export default `
           {{> mainButton}}
           {{> secondaryButton}}
       </div>
-  </div>
+  </form>
 `

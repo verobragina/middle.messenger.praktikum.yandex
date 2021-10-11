@@ -1,5 +1,5 @@
 export default `
-  <a class="secondary__btn-link" href="{{hrefSecondary}}">
-    <button class="secondary__btn">{{secondaryButton}}</button>
+  <a class="secondary__btn" href="{{hrefSecondary}}">
+    <span>{{secondaryButton}}</span>
   </a>
 `

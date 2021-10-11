@@ -3,7 +3,7 @@ export default `
     <div class="chats__sidebar chats">
       <div class="chats__profile">
         <a class="chats__profile-link" href="#profile">
-          <p>Профиль</p>
+          <span>Профиль</span>
           <span class="icon-arrow-left"></span>
         </a>
       </div>
@@ -16,7 +16,7 @@ export default `
               <div class="chat__user-name">{{user}}</div>
               <div class="chat__message">{{message}}</div>
             </div>
-            <div class="chat__time">{{time}}</div>
+            <time class="chat__time" datetime="{{datetime}}">{{time}}</time>
           </div>
         {{/each}}
       </div>
@@ -26,10 +26,10 @@ export default `
       <div class="chats__messages-filed">
           <p class="chats__messages-placeholder">Выберите чат, чтобы отправить сообщение</p>
       </div>
-      <div class="chats__message-container">
+      <form action="" method="post" class="chats__message-container">
           <input class="chats__message-input" name="{{message}}" type="text">
-          <button class="chats__message-send"></button>
-      </div>
+          <button type="submit" class="chats__message-send"></button>
+      </form>
     </div>
   </div>
 `

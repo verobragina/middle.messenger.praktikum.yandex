@@ -1,13 +1,11 @@
 export default `
   <div class="profile__container">
       <div class="profile__container-back">
-          <a href="/#chats">
-              <button id="backToChats">
-                  <span class="icon-arrow-left"></span>
-              </button>
+          <a href="/#chats" id="backToChats">
+              <span class="icon-arrow-left"></span>
           </a>
       </div>
-      <div class="profile__container-main profile">
+      <form action="" method="post" class="profile__container-main profile">
           <div class="profile__avatar">
               <img src="{{avatar}}" alt="avatar" name="{{nameAvatar}}">
               <div class="profile__avatar-label">Поменять аватар</div>
@@ -23,6 +21,6 @@ export default `
                   {{> secondaryButton}}
               {{/each}}
           </div>
-      </div>
+      </form>
   </div>
 `

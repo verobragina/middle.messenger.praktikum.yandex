@@ -109,18 +109,18 @@
   }
 
   &__buttons {
-    & .secondary__btn-link {
+    & .secondary__btn {
       font-size: 13px;
       display: flex;
       width: 100%;
       padding: 10px 0;
     }
 
-    & .secondary__btn-link:not(:last-child) {
+    & .secondary__btn:not(:last-child) {
       border-bottom: 1px solid $border-color;
     }
 
-    & .secondary__btn-link:last-child button {
+    & .secondary__btn:last-child {
       color: $warning-color;
 
       &:hover {

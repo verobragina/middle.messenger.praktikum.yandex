@@ -23,7 +23,7 @@
   @include flex(column, space-evenly, center);
   margin: 30px 0;
 
-  a:first-child {
+  input:first-child {
     margin-bottom: 15px;
   }
 }

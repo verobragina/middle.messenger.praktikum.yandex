@@ -14,7 +14,7 @@ const data = {
   input: [
     {
       label: 'Почта',
-      type: 'text',
+      type: 'email',
       name: 'email',
       id: 'email'
     },
@@ -38,7 +38,7 @@ const data = {
     },
     {
       label: 'Телефон',
-      type: 'text',
+      type: 'tel',
       name: 'phone',
       id: 'phone'
     },
