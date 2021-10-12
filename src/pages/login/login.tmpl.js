@@ -1,5 +1,5 @@
 export default `
-  <form action="" method="get" class="login form__container">
+  <form action="" method="post" class="login form__container">
       <div class="form__field">
           <h1 class="form__title">{{title}}</h1>
           {{#each input}}
