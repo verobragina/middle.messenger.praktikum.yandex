@@ -7,7 +7,7 @@ import error500 from './pages/error/error-500'
 
 import './scss/styles.scss'
 
-const output = document.querySelector('#output')
+const output = document.querySelector('#output') as HTMLElement
 
 window.addEventListener('hashchange', () => {
   const hash = window.location.hash;
@@ -23,6 +23,7 @@ window.addEventListener('hashchange', () => {
       output.innerHTML = profile
       break
     case '#chats':
+      console.log(chats)
       output.innerHTML = chats
       break
     case '#error404':
