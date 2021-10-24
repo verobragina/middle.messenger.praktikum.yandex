@@ -1,9 +1,6 @@
 @import "colors";
-
 @import "mixins";
-
 @import "fonts";
-
 @import "null";
 
 $fontFamily: "Inter", sans-serif;
@@ -21,6 +18,4 @@ h1 {
   height: 100%;
 }
 
-// Form Styles
 @import "form";
-// Form Styles End

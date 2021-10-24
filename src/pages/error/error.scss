@@ -3,6 +3,7 @@
 
 .error__container {
   @include flex(column, space-evenly, center);
+
   height: 160px;
   position: absolute;
   top: 50%;

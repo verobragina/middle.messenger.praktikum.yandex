@@ -1,6 +1,6 @@
-import Handlebars from 'handlebars'
-import chatsTmpl from './chats.tmpl'
-import './chats.scss'
+import Handlebars from 'handlebars';
+import chatsTmpl from './chats.tmpl';
+import './chats.scss';
 
 const data = {
   chat: [
@@ -8,66 +8,66 @@ const data = {
       user: 'Андрей',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: '10:49'
+      time: '10:49',
     },
     {
       user: 'Илья',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: '09:20'
+      time: '09:20',
     },
     {
       user: 'Вадим',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: 'Пт'
+      time: 'Пт',
     },
     {
       user: 'Стас',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: 'Чт'
+      time: 'Чт',
     },
     {
       user: 'Иван',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: '1 Мая 2021'
+      time: '1 Мая 2021',
     },
     {
       user: 'Андрей',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: '10:49'
+      time: '10:49',
     },
     {
       user: 'Илья',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: '09:20'
+      time: '09:20',
     },
     {
       user: 'Вадим',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: 'Пт'
+      time: 'Пт',
     },
     {
       user: 'Стас',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: 'Чт'
+      time: 'Чт',
     },
     {
       user: 'Иван',
       message: 'Друзья, у меня для вас особенный выпуск новостей!',
       datetime: '',
-      time: '1 Мая 2021'
-    }
+      time: '1 Мая 2021',
+    },
   ],
-  message: "message"
-}
+  message: 'message',
+};
 
-const chats = Handlebars.compile(chatsTmpl)
+const chats = Handlebars.compile(chatsTmpl);
 
-export default chats(data)
+export default chats(data);

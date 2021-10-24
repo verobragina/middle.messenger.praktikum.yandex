@@ -16,6 +16,7 @@
 
 .chats__content {
   @include flex(column, space-between, center);
+
   flex: 1;
   padding: 10px 20px;
 
@@ -72,6 +73,7 @@
 
 .chat {
   @include flex(row, space-evenly, center);
+
   position: relative;
   border-top: 1px solid $border-color;
   padding: 12px 10px;
@@ -125,6 +127,7 @@
 
 .chats__message-container {
   @include flex(row, space-between, center);
+
   width: 100%;
   height: 45px;
   border-top: 1px solid $border-color;

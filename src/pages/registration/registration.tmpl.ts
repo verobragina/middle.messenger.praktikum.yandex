@@ -11,4 +11,4 @@ export default `
           {{> secondaryButton}}
       </div>
   </form>
-`
+`;

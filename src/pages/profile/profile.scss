@@ -11,6 +11,7 @@
     width: 65px;
     height: 100%;
     border-right: 1px solid $border-color;
+
     @include flex(column, center, center);
 
     #backToChats {
@@ -50,12 +51,13 @@
     background-color: $dark-grey;
     margin: 20px auto;
     cursor: pointer;
+
     @include flex(row, center, center);
 
     &:hover .profile__avatar-label {
       display: flex;
       background-color: #000;
-      opacity: .5;
+      opacity: 50%;
     }
 
     &-label {

@@ -4,4 +4,4 @@ export default `
     <div class="error__text">{{text}}</div>
     <a class="error__back" href="/#chats">Назад к чатам</a>
   </div>
-`
+`;
