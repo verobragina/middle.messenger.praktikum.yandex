@@ -1,38 +1,35 @@
-import login from './pages/login/login';
-import registration from './pages/registration/registration';
-import profile from './pages/profile/profile';
-import chats from './pages/chats/chats';
-import error404 from './pages/error/error-404';
-import error500 from './pages/error/error-500';
-
+import Login from './pages/Login/Login';
+import Registration from './pages/Registration/Registration';
+import Profile from './pages/Profile/Profile';
+import Chats from './pages/Chats/Chats';
+import Error404 from './pages/Error/Error-404';
+import Error500 from './pages/Error/Error-500';
+import {render} from './utils/utils';
 import './scss/styles.scss';
 
-const output = document.querySelector('#output') as HTMLElement;
+type TLocation = { [key: string]: any };
+
+const TAG: string = '#output';
+
+const location: TLocation = {
+  'login': Login,
+  'registration': Registration,
+  'profile': Profile,
+  'chats': Chats,
+  'error404': Error404,
+  'error500': Error500,
+};
 
 window.addEventListener('hashchange', () => {
-  const hash = window.location.hash;
+  const hash = window.location.hash.slice(1);
 
-  switch (hash) {
-    case '#login':
-      output.innerHTML = login;
-      break;
-    case '#registration':
-      output.innerHTML = registration;
-      break;
-    case '#profile':
-      output.innerHTML = profile;
-      break;
-    case '#chats':
-      console.log(chats);
-      output.innerHTML = chats;
-      break;
-    case '#error404':
-      output.innerHTML = error404;
-      break;
-    case '#error500':
-      output.innerHTML = error500;
-      break;
-    default:
-      output.innerHTML = error404;
-  }
+  const component = Object.keys(location).includes(hash)
+    ? new location[hash]()
+    : new Error404();
+
+  render(TAG, component.render());
+  // eslint-disable-next-line
+  component.__proto__.hasOwnProperty('initValidation')
+    ? component.initValidation()
+    : false;
 });

@@ -82,9 +82,11 @@
     margin: 30px 0;
 
     & .input__wrapper {
+      position: relative;
       display: flex;
       justify-content: space-between;
       margin: 0;
+      padding: 5px 0;
     }
 
     & .input__wrapper .input__label {
@@ -98,7 +100,13 @@
       color: $text-secondary;
       font-size: 13px;
       text-align: end;
-      pointer-events: none;
+      //pointer-events: none;
+    }
+
+    & .input__wrapper span{
+      position: absolute;
+      right: 0;
+      bottom:2.5px;
     }
 
     & .input__wrapper:not(:last-child) {

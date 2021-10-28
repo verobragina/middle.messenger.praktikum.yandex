@@ -1,8 +1,4 @@
-import Handlebars from 'handlebars';
-import chatsTmpl from './chats.tmpl';
-import './chats.scss';
-
-const data = {
+export const CHATS_DATA = {
   chat: [
     {
       user: 'Андрей',
@@ -67,7 +63,3 @@ const data = {
   ],
   message: 'message',
 };
-
-const chats = Handlebars.compile(chatsTmpl);
-
-export default chats(data);

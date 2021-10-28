@@ -1,13 +1,6 @@
-import Handlebars from 'handlebars';
-import profileTmpl from './profile.tmpl';
-import avatar from '../../img/avatar.png';
-import './profile.scss';
-import '../../components/input';
-import '../../components/secondary-button';
-
-const data = {
+export const PROFILE_DATA = {
   username: 'Иван',
-  avatar: avatar,
+  avatar: 'avatar',
   nameAvatar: 'avatar',
   input: [
     {
@@ -68,7 +61,3 @@ const data = {
     },
   ],
 };
-
-const profile = Handlebars.compile(profileTmpl);
-
-export default profile(data);

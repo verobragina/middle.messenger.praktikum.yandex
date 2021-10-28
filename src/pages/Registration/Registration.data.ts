@@ -1,11 +1,4 @@
-import Handlebars from 'handlebars';
-import registrationTmpl from './registration.tmpl';
-import './registration.scss';
-import '../../components/input';
-import '../../components/main-button';
-import '../../components/secondary-button';
-
-const data = {
+export const REGISTRATION_DATA = {
   title: 'Регистрация',
   mainButton: 'Зарегистрироваться',
   hrefMain: '/#chats',
@@ -51,11 +44,8 @@ const data = {
     {
       label: 'Пароль (еще раз)',
       type: 'password',
-      id: 'password-rep',
+      name: 'password_confirm',
+      id: 'password_confirm',
     },
   ],
 };
-
-const registration = Handlebars.compile(registrationTmpl);
-
-export default registration(data);

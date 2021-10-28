@@ -1,11 +1,4 @@
-import Handlebars from 'handlebars';
-import loginTmpl from './login.tmpl';
-import './login.scss';
-import '../../components/input';
-import '../../components/main-button';
-import '../../components/secondary-button';
-
-const data = {
+export const LOGIN_DATA = {
   title: 'Вход',
   mainButton: 'Авторизоваться',
   hrefMain: '/#chats',
@@ -23,10 +16,5 @@ const data = {
       type: 'password',
       name: 'password',
       id: 'password',
-    },
-  ],
+    }],
 };
-
-const login = Handlebars.compile(loginTmpl);
-
-export default login(data);
