@@ -5,10 +5,8 @@
 }
 
 *,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,6 +15,7 @@
   outline: none;
 }
 
+a,
 a:focus,
 a:active {
   outline: none;
@@ -38,9 +37,6 @@ body {
 
 body {
   line-height: 1;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 input,

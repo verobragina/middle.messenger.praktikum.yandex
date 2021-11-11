@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "experimentalDecorators": true,
+  "esModuleInterop": true,
+  "forceConsistentCasingInFileNames": true,
+  "strict": true,
+  "noImplicitAny": true,
+  "noUnusedLocals": true,
+  "noUnusedParameters": true,
+  "sourceMap": true,
+  "noImplicitThis": false,
+  "strictNullChecks": true,
+  "strictPropertyInitialization": false,
+  "skipLibCheck": true
+}
