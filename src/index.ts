@@ -22,14 +22,13 @@ const location: TLocation = {
 
 window.addEventListener('hashchange', () => {
   const hash = window.location.hash.slice(1);
+  let component;
 
-  const component = Object.keys(location).includes(hash)
-    ? new location[hash]()
-    : new Error404();
+  if (Object.keys(location).includes(hash)) {
+    component = new location[hash]();
+  } else {
+    component = new Error404();
+  }
 
-  render(TAG, component.render());
-  // eslint-disable-next-line
-  component.__proto__.hasOwnProperty('initValidation')
-    ? component.initValidation()
-    : false;
+  render(TAG, component.getContent());
 });

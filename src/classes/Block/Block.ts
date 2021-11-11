@@ -1,31 +1,28 @@
+import * as Handlebars from 'handlebars';
 import EventBus from '../EventBus/EventBus';
 import {css} from '../../utils/utils';
 
 type TProps = { [key: string]: any };
 
-export default class Block {
-  _element: HTMLElement
-  _meta: Record<string, any>
-  props: TProps = {}
-  eventBus: () => EventBus
+export default abstract class Block {
+  private _element;
+  private eventBus: () => EventBus;
+  private readonly _nodes: Record<string, Block>;
+  protected props: TProps = {};
 
-  static EVENTS = {
+  abstract render(): Element;
+
+  private static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
     FLOW_CDU: 'flow:component-did-update',
     FLOW_RENDER: 'flow:render',
   }
 
-  constructor(tagName = 'div', props = {}) {
+  protected constructor(props = {}) {
     const eventBus = new EventBus();
-
-    this._meta = {
-      tagName,
-      props,
-    };
-
+    this._nodes = {};
     this.props = this._makePropsProxy(props);
-
     this.eventBus = () => eventBus;
 
     this._registerEvents(eventBus);
@@ -39,11 +36,8 @@ export default class Block {
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
-  private _createResources() {
-    const {tagName} = this._meta;
-    if (tagName) {
-      this._element = this._createDocumentElement(tagName);
-    }
+  private _createResources(): void {
+    this._element = document.createDocumentFragment();
   }
 
   init() {
@@ -71,35 +65,90 @@ export default class Block {
     return oldProps !== newProps;
   }
 
-  setProps = (nextProps: TProps) => {
+  setProps = ({...nextProps}: TProps) => {
+    const previousProps = {...this.props};
     if (!nextProps) {
       return;
     }
-
     Object.assign(this.props, nextProps);
+    this.eventBus().emit(Block.EVENTS.FLOW_CDU, previousProps, this.props);
   }
 
   get element() {
-    return this._element;
+    return this._element.firstElementChild;
   }
 
   private _render() {
     const block = this.render();
+    this._removeEvents();
+    this._element.textContent = '';
     if (block) {
-      this._element.innerHTML = block;
+      this._element.appendChild(block);
     }
+    this._addEvents();
   }
 
-  render(): string | void {
+  compile = (tmpl, props) => {
+    const fragment = document.createElement('template');
+    const template = Handlebars.compile(tmpl);
+    const nodes = this._nodes;
+
+    Object.entries(props).forEach(([propName, prop], index) => {
+      if (prop instanceof Block) {
+        nodes[index] = prop;
+        props[propName] = `<div id='${index}'></div>`;
+      }
+    });
+
+    fragment.innerHTML = template(props);
+
+    Object.entries(nodes).forEach(([id, component]: [string, Block]) => {
+      const templateEl = fragment.content.getElementById(`${id}`);
+
+      if (!templateEl) {
+        return;
+      }
+
+      templateEl.replaceWith(component.render());
+    });
+
+    if (props.events) {
+      this._addEvents(fragment.content.firstElementChild);
+    }
+
+    return fragment.content.firstElementChild;
   }
 
   getContent() {
-    return this.element;
+    return this.element as Node;
   }
 
-  private _makePropsProxy(props: TProps) {
-    const self = this;
+  private _addEvents(element?) {
+    const {events} = this.props;
+    if (events) {
+      Object.entries(events).forEach(([event, handler]) => {
+        if (element) {
+          element.addEventListener(event, handler);
+        }
+        this.element?.addEventListener(event, handler);
+      });
+    }
+  }
 
+  private _removeEvents(element?) {
+    const {events} = this.props;
+    if (events) {
+      Object.entries(events).forEach(([event, handler]) => {
+        if (element) {
+          element.removeEventListener(event, handler);
+        }
+        this.element?.removeEventListener(event, handler);
+      });
+    }
+  }
+
+  private _makePropsProxy = (props: TProps) => {
+    const self = this;
     return new Proxy(props, {
       get(target, prop: string) {
         if (prop.indexOf('_') === 0) {
@@ -124,10 +173,6 @@ export default class Block {
         return true;
       },
     });
-  }
-
-  private _createDocumentElement(tagName: string) {
-    return document.createElement(tagName);
   }
 
   show() {

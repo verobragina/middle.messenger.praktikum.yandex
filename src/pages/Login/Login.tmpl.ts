@@ -1,14 +1,13 @@
 export default `
-  <form action="" method="post" class="login form__container" id="form-login">
+  <form action="" method="post" class="login form__container" name="{{name}}">
       <div class="form__field">
           <h1 class="form__title">{{title}}</h1>
-          {{#each input}}
-              {{> input}}
-          {{/each}}
+          {{{login}}}
+          {{{password}}}
       </div>
       <div class="form__buttons">
-          {{> mainButton}}
-          {{> secondaryButton}}
+          {{{mainButton}}}
+          {{{secondaryButton}}}
       </div>
   </form>
 `;

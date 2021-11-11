@@ -1,7 +1,13 @@
-import Handlebars from 'handlebars';
 import secondaryButton from './secondary-button.tmpl';
+import Block from '../../classes/Block/Block';
 import './secondary-button.scss';
 
-Handlebars.registerPartial('secondaryButton', secondaryButton);
+export default class SecondaryButton extends Block {
+  constructor(props?: any) {
+    super(props);
+  }
 
-export default secondaryButton;
+  public render() {
+    return this.compile(secondaryButton, this.props);
+  }
+}

@@ -19,6 +19,10 @@
     outline: none;
     border-bottom: 1px solid $main-color;
     width: 100%;
+
+    &.error {
+      border-color: $warning-color;
+    }
   }
   .input__error-message {
     color: $warning-color;

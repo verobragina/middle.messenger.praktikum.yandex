@@ -1,4 +1,4 @@
-import Handlebars from 'handlebars';
+import * as Handlebars from 'handlebars';
 import chat from './chat.tmpl';
 import './chat.scss';
 

@@ -1,14 +1,11 @@
 type TStyles = { [key: string]: string };
 
-export const getErrorField = (arr: HTMLElement[], name: string): HTMLElement[] => {
-  return arr.filter((el) => {
-    return el.dataset.name === name;
-  });
-};
-
-export const render = (tag: string, block: string) => {
+export const render = (tag: string, block) => {
   const root = document.querySelector(tag) as HTMLElement;
-  root.innerHTML = block;
+  if (root.firstChild) {
+    root.removeChild(root.firstChild);
+  }
+  root.appendChild(block);
   return root;
 };
 
@@ -17,3 +14,7 @@ export const css = (el: any, styles: TStyles = {}) => {
     el.style[key] = styles[key];
   });
 };
+
+export default function isEqual(lhs, rhs) {
+  return lhs === rhs;
+}
