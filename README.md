@@ -36,7 +36,7 @@ npm run start
 
 2. [Registration](https://wonderful-davinci-8c226d.netlify.app/#registration)
 
-3. [Chats](https://wonderful-davinci-8c226d.netlify.app/#chats)
+3. [Chat](https://wonderful-davinci-8c226d.netlify.app/#chats)
 
 4. [Profile](https://wonderful-davinci-8c226d.netlify.app/#profile)
 

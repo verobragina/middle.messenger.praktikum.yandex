@@ -7,7 +7,7 @@ type TProps = { [key: string]: any };
 export default abstract class Block {
   private _element;
   private eventBus: () => EventBus;
-  private readonly _nodes: Record<string, Block>;
+  private readonly _nodes: Record<string | number, Block>;
   protected props: TProps = {};
 
   abstract render(): Element;
@@ -88,7 +88,7 @@ export default abstract class Block {
     this._addEvents();
   }
 
-  compile = (tmpl, props) => {
+  compile = (tmpl, props: {[key: string]: any}) => {
     const fragment = document.createElement('template');
     const template = Handlebars.compile(tmpl);
     const nodes = this._nodes;
@@ -97,6 +97,17 @@ export default abstract class Block {
       if (prop instanceof Block) {
         nodes[index] = prop;
         props[propName] = `<div id='${index}'></div>`;
+      }
+
+      if (propName === 'chats') {
+        if (prop.length !== 0) {
+          prop.forEach((item, index) => {
+            if (prop[index] instanceof Block) {
+              nodes[index] = item;
+              return prop[index] = `<div id='${index}'></div>`;
+            }
+          });
+        }
       }
     });
 

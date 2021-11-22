@@ -1,15 +1,12 @@
 export default `
   <div class="profile__container">
       <div class="profile__container-back">
-          <a href="/#chats" id="backToChats">
+          <a href="/messenger" id="backToChats">
               <span class="icon-arrow-left"></span>
           </a>
       </div>
       <form action="" method="post" class="profile__container-main profile" name="{{name}}">
-          <div class="profile__avatar">
-              <img src="{{avatar}}" alt="avatar" name="{{nameAvatar}}">
-              <div class="profile__avatar-label">Поменять аватар</div>
-          </div>
+          {{{avatar}}}
           <h1 class="profile__name">{{username}}</h1>
           <div class="profile__info">
               {{{email}}}
@@ -18,6 +15,7 @@ export default `
               {{{second_name}}}
               {{{display_name}}}
               {{{phone}}}
+              {{{saveData}}}
           </div>
           <div class="profile__buttons">
               {{{changeData}}}
