@@ -6,6 +6,8 @@ import {userController} from '../../../controllers/UserController';
 import {Path, router} from '../../../index';
 import './ChatHeader.scss';
 
+type TResponse = { [key: string]: any }
+
 export default class ChatHeader extends Block {
   constructor(props?: any) {
     super(props);
@@ -30,8 +32,8 @@ export default class ChatHeader extends Block {
         }
 
         if (e.target.hasAttribute('data-add-user')) {
-          const userInput = document.querySelector('.chat-header__add-user');
-          userInput.classList.toggle('show');
+          const userAddField = document.querySelector('.chat-header__add-user');
+          userAddField.classList.toggle('show');
         }
       },
     };
@@ -42,18 +44,21 @@ export default class ChatHeader extends Block {
         const selectedChatId = Number(e.target.closest('.chat-header').dataset.selectedChat);
         const options = e.target.closest('.chat-header__options');
         const inputUsername = document.querySelector('.add-user__input') as HTMLInputElement;
+        const userAddField = document.querySelector('.chat-header__add-user') as HTMLInputElement;
 
         if (inputUsername.value !== '') {
-          const user = await userController.searchUser({
+          await userController.searchUser({
             login: inputUsername.value,
-          });
-
-          await chatsController.addUser({
-            users: [user[0].id],
-            chatId: selectedChatId,
+          }).then(async (res: TResponse) => {
+            await chatsController.addUser({
+              users: [res.response[0].id],
+              chatId: selectedChatId,
+            });
           });
 
           options.classList.toggle('show');
+          userAddField.classList.toggle('show');
+          inputUsername.value = '';
         }
       },
     };
