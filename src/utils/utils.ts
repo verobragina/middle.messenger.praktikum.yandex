@@ -3,7 +3,6 @@ type TStyles = { [key: string]: string };
 export const render = (tag: string, block) => {
   const root = document.querySelector(tag) as HTMLElement;
   root.innerHTML = '';
-  console.log('render block', block);
   root.appendChild(block);
   return root;
 };
