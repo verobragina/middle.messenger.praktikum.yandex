@@ -1,15 +1,15 @@
 import errorTmpl from './Error.tmpl';
-import {ERROR404_DATA} from './Error.data';
 import Block from '../../classes/Block/Block';
+import {ERROR_DATA} from './Error.data';
 import './Error.scss';
 
-export default class Error404 extends Block {
+export default class Error extends Block {
   constructor(props?: any) {
     super(props);
   }
 
   componentDidMount() {
-    this.setProps(ERROR404_DATA);
+    this.setProps(ERROR_DATA);
   }
 
   public render() {
