@@ -1,4 +1,4 @@
-type TData = {[key: string]: any}
+type TData = {[key: string]: any};
 
 interface IOptions {
   method?: string;
@@ -15,7 +15,7 @@ const enum METHODS {
 }
 
 function queryStringify(data: TData) {
-  if (typeof data !== 'object') {
+  if (typeof data !== 'object' && !data) {
     throw new Error('Data must be object!');
   }
   const keys = Object.keys(data);

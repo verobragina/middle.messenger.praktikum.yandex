@@ -1,7 +1,13 @@
-import Handlebars from 'handlebars';
 import mainButton from './main-button.tmpl';
+import Block from '../../classes/Block/Block';
 import './main-button.scss';
 
-Handlebars.registerPartial('mainButton', mainButton);
+export default class MainButton extends Block {
+  constructor(props?: any) {
+    super(props);
+  }
 
-export default mainButton;
+  public render() {
+    return this.compile(mainButton, this.props);
+  }
+}

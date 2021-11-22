@@ -1,14 +1,18 @@
 export default `
-  <form action="" method="post" class="registration form__container">
+  <form action="" method="post" class="registration form__container" name="{{name}}">
       <div class="form__field">
           <h1 class="form__title">{{title}}</h1>
-          {{#each input}}
-              {{> input}}
-          {{/each}}
+          {{{email}}}
+          {{{login}}}
+          {{{first_name}}}
+          {{{second_name}}}
+          {{{phone}}}
+          {{{password}}}
+          {{{password_confirm}}}
       </div>
       <div class="form__buttons">
-          {{> mainButton}}
-          {{> secondaryButton}}
+          {{{mainButton}}}
+          {{{secondaryButton}}}
       </div>
   </form>
 `;

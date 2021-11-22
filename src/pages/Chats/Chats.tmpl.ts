@@ -19,10 +19,7 @@ export default `
       <div class="chats__messages-filed">
           <p class="chats__messages-placeholder">Выберите чат, чтобы отправить сообщение</p>
       </div>
-      <form action="" method="post" class="chats__message-container">
-          <input class="chats__message-input" name="{{message}}" type="text" id="message">
-          <input type="submit" class="chats__message-send" value="Отправить">
-      </form>
+      {{{messageField}}}
     </div>
   </div>
 `;

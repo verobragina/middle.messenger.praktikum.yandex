@@ -1,5 +1,5 @@
 import {getErrorField, css} from '../../utils/utils';
-import {VALIDATION_DATA as data} from './FormValidator.data';
+import {VALIDATION_DATA as data} from './FormaValidator.data';
 
 export type TOutput = { [key: string]: string };
 
