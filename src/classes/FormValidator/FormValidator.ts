@@ -5,7 +5,7 @@ export type TOutput = { [key: string]: string };
 export default class FormValidator {
   errorField: HTMLElement;
   password: string;
-  output: {}
+  output: {};
 
   inputCheck = (value: string, name: string) => {
     let validationResult: string = '';
