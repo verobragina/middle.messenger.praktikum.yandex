@@ -7,6 +7,7 @@ import {store} from '../../../classes/Store/Store';
 import {Path, router} from '../../../index';
 import {isEmptyObject} from '../../../utils/utils';
 import './ProfilePassword.scss';
+import '../Profile.scss';
 
 export default class ProfilePassword extends Block {
   validator: FormValidator;
