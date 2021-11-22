@@ -21,8 +21,7 @@ class UserController {
     try {
       return await userAPI.changeAvatar(data);
     } catch (e) {
-      console.log(e);
-      // throw new Error(`Error from UserController: ${e.message}`);
+      throw new Error(`Error from UserController: ${e.message}`);
     }
   }
 

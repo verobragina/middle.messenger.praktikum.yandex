@@ -16,7 +16,6 @@ export default class ChatMessageInput extends Block {
         const input = document.querySelector('#message') as HTMLInputElement;
 
         if (input.value) {
-          console.log('yes');
           webSocketAPI.socket.send(JSON.stringify({
             content: input.value,
             type: 'message',
