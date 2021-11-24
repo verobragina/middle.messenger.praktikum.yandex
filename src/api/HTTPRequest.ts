@@ -1,3 +1,5 @@
+import {BaseURL, Methods} from '../constants/constants';
+
 type TData = { [key: string]: any };
 
 interface IOptions {
@@ -5,13 +7,6 @@ interface IOptions {
   timeout?: number;
   headers?: Record<string, string>;
   data?: TData;
-}
-
-const enum METHODS {
-  GET = 'GET',
-  POST = 'POST',
-  PUT = 'PUT',
-  DELETE = 'DELETE',
 }
 
 function queryStringify(data: TData) {
@@ -27,23 +22,23 @@ export default class HTTPTransport {
   _baseURL: string
 
   constructor() {
-    this._baseURL = 'https://ya-praktikum.tech/api/v2';
+    this._baseURL = BaseURL.URL;
   }
 
   public get = (url: string, options: IOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.GET}, options.timeout);
+    return this.request(url, {...options, method: Methods.GET}, options.timeout);
   }
 
   public post = (url: string, options: IOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.POST}, options.timeout);
+    return this.request(url, {...options, method: Methods.POST}, options.timeout);
   }
 
   public put = (url: string, options: IOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.PUT}, options.timeout);
+    return this.request(url, {...options, method: Methods.PUT}, options.timeout);
   }
 
   public delete = (url: string, options: IOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.DELETE}, options.timeout);
+    return this.request(url, {...options, method: Methods.DELETE}, options.timeout);
   }
 
   private request = (url: string, options: IOptions = {}, timeout: number = 5000) => {
@@ -57,7 +52,7 @@ export default class HTTPTransport {
       }
 
       const xhr = new XMLHttpRequest();
-      const isGet = method === METHODS.GET;
+      const isGet = method === Methods.GET;
 
       xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
 

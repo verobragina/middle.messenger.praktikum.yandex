@@ -1,6 +1,7 @@
 import {chatsController} from '../controllers/ChatsController';
 import {store} from '../classes/Store/Store';
 import {setMessages} from '../classes/Store/reducers';
+import {BaseChatsURL, GetOldMessages} from '../constants/constants';
 
 type TDataToken = { [key: string]: any };
 
@@ -13,7 +14,7 @@ export default class WebSocketAPI {
   public socket: WebSocket;
 
   constructor() {
-    this._baseURL = 'wss://ya-praktikum.tech/ws/chats';
+    this._baseURL = BaseChatsURL.URL;
   }
 
   connect({userID, chatID}) {
@@ -29,8 +30,8 @@ export default class WebSocketAPI {
           this.socket.addEventListener('open', () => {
             console.log('Соединение установлено');
             this.socket.send(JSON.stringify({
-              content: '',
-              type: 'get old',
+              content: GetOldMessages.Content,
+              type: GetOldMessages.Type,
             }));
           });
 

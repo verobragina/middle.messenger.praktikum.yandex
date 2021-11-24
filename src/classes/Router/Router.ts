@@ -76,7 +76,7 @@ export default class Router {
   async checkRoute(pathname: string) {
     if (pathname === Path.login || pathname === Path.registration) {
       await authController.getUserInfo().then(async (res: TResponse) => {
-        if (res.status >= 200 && res.status < 400) {
+        if (res.status >= 200 && res.status < 300) {
           store.dispatch(setUser(res.response));
           await chatsController.getChatInfo().then((res: TResponse) => {
             store.dispatch(loadChats(res.response));
@@ -90,7 +90,7 @@ export default class Router {
         if (res.status > 400) {
           this.go(Path.login);
         }
-        if (res.status >= 200 && res.status < 400) {
+        if (res.status >= 200 && res.status < 300) {
           store.dispatch(setUser(res.response));
           await chatsController.getChatInfo().then((res: TResponse) => {
             store.dispatch(loadChats(res.response));

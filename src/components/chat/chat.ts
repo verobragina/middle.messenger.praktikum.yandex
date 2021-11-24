@@ -11,8 +11,10 @@ export default class Chat extends Block {
     if (this.props.last_message) {
       const time = new Date(this.props.last_message.time).toLocaleTimeString();
       const day = new Date(this.props.last_message.time).toLocaleDateString();
-      this.props.datetime = `${time} ${day}`;
-      this.setProps(this.props);
+      if (time !== 'Invalid Date' && day !== 'Invalid Date') {
+        this.props.datetime = `${time} ${day}`;
+        this.setProps(this.props);
+      }
     }
   }
 

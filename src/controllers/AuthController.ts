@@ -35,7 +35,6 @@ class AuthController {
       return await authAPI.getUserInfo();
     } catch (e) {
       return e;
-      // throw new Error(`Error from AuthController: ${e.message}`);
     }
   }
 }

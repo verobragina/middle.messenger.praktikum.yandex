@@ -25,6 +25,7 @@ export default class Route {
 
   leave(): void {
     if (this._block) {
+      // TODO: implement proper component removal
       // this._block.hide();
     }
   }

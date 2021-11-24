@@ -32,11 +32,8 @@ export default class ChatMessagesField extends Block {
 
   addMessage(message, userID, parent) {
     if (message.type === 'message') {
-      if (message.user_id === userID) {
-        parent.appendChild(this.createMessage(message.content, 'sent'));
-      } else {
-        parent.appendChild(this.createMessage(message.content, 'received'));
-      }
+      const messageType = message.user_id === userID ? 'sent' : 'received';
+      parent.appendChild(this.createMessage(message.content, messageType));
     }
     if (message.type === 'user connected') {
       parent.appendChild(this.createSystemMessage(message.content));
