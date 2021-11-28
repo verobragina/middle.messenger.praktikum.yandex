@@ -35,7 +35,7 @@ export default class FormValidator {
     const fields = form.querySelectorAll('input');
 
     fields.forEach((input) => {
-      if (input.type !== 'submit') {
+      if (input.type !== 'submit' && input.name !== 'password_confirm') {
         if (input.value !== '') {
           this.output[input.name] = input.value;
         } else {
@@ -44,7 +44,7 @@ export default class FormValidator {
       }
     });
 
-    console.log(this.output);
+    return this.output;
   }
 
   onInput = (target) => {
@@ -55,11 +55,10 @@ export default class FormValidator {
 
   onInputClick = (target, name) => {
     this.errorField = document.querySelector(`[data-name=${name}]`);
-
     target.classList.remove('error');
 
     if (name === 'password_confirm') {
-      const passwordField = document.querySelector(`[data-name=${name}]`) as HTMLInputElement;
+      const passwordField = document.querySelector(`[name='password']`) as HTMLInputElement;
       this.password = passwordField.value;
     }
   }

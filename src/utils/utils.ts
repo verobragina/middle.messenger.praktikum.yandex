@@ -2,9 +2,7 @@ type TStyles = { [key: string]: string };
 
 export const render = (tag: string, block) => {
   const root = document.querySelector(tag) as HTMLElement;
-  if (root.firstChild) {
-    root.removeChild(root.firstChild);
-  }
+  root.innerHTML = '';
   root.appendChild(block);
   return root;
 };
@@ -15,6 +13,15 @@ export const css = (el: any, styles: TStyles = {}) => {
   });
 };
 
-export default function isEqual(lhs, rhs) {
+export const isEqual = (lhs, rhs) => {
   return lhs === rhs;
-}
+};
+
+export const isEmptyObject = (obj) => {
+  return (Object.keys(obj).length !== 0);
+};
+
+export const toLowerCase = (str: string) => {
+  return str.toLowerCase();
+};
+

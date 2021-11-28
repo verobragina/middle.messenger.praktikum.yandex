@@ -1,4 +1,4 @@
-import secondaryButton from './secondary-button.tmpl';
+import secondaryButtonTmpl from './secondary-button.tmpl';
 import Block from '../../classes/Block/Block';
 import './secondary-button.scss';
 
@@ -8,6 +8,6 @@ export default class SecondaryButton extends Block {
   }
 
   public render() {
-    return this.compile(secondaryButton, this.props);
+    return this.compile(secondaryButtonTmpl, this.props);
   }
 }

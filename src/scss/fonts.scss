@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "icomoon";
-  src: url("../../static/fonts/icomoon.ttf?beq2tp") format("truetype");
+  src: url("../../static/fonts/icomoon.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -30,4 +30,8 @@
 
 .icon-arrow-left::before {
   content: "\ea40";
+}
+
+.icon-more::before {
+  content: "\e901";
 }
