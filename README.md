@@ -1,11 +1,13 @@
 # Messenger
-Messenger Project for Yandex.Practicum on pure JavaScript
-### Link to Figma
-[Project Prototype](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1)
-### Link to Netlify
-[Netlify](https://wonderful-davinci-8c226d.netlify.app/)
-### Link to PR
-[Pull Request](https://github.com/verobragina/middle.messenger.praktikum.yandex/pull/3)
+Messenger Project for Yandex.Practicum.
+
+User can register and login/logout in the app, create chat, add other users to chat, send real-time messages and receive them, delete chat, edit profile info and avatar.
+
+#### [Figma Prototype](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1)
+#### [ Heroku App](https://guarded-everglades-94366.herokuapp.com/)
+#### [Netlify](https://wonderful-davinci-8c226d.netlify.app/)
+#### [PR](https://github.com/verobragina/middle.messenger.praktikum.yandex/pull/3)
+
 ### Usage
 1. Installing modules
 ```
@@ -15,31 +17,27 @@ npm install
 ```
 npm run build
 ```
-3. Runnig Project Local
-```
-npm run dev
-```
 3. Running Developer Server (localhost:3000)
 ```
 npm run start
 ```
+4. Running ESLint
+```
+npm run lint
+```
 ### Project Stack
-**Building Tool:** Parcel
+**Language:** TypeScript
+
+**Building Tool:** Webpack
 
 **Template System:** Handlebars.js
 
 **Preprocessor:** Sass
 
 **Server:** Express.js
-### Template Pages
-1. [Login](https://wonderful-davinci-8c226d.netlify.app/#login)
 
-2. [Registration](https://wonderful-davinci-8c226d.netlify.app/#registration)
+**Lint:** ESLint, StyleLint
 
-3. [Chat](https://wonderful-davinci-8c226d.netlify.app/#chats)
+**Test:** Mocha, Chai
 
-4. [Profile](https://wonderful-davinci-8c226d.netlify.app/#profile)
-
-5. [404](https://wonderful-davinci-8c226d.netlify.app/#error404)
-
-6. [500](https://wonderful-davinci-8c226d.netlify.app/#error500)
+**Precommit Hook:** Husky
