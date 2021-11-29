@@ -5,7 +5,7 @@ Messenger Project for Yandex.Practicum on pure JavaScript
 ### Link to Netlify
 [Netlify](https://wonderful-davinci-8c226d.netlify.app/)
 ### Link to PR
-[Pull Request](https://github.com/verobragina/middle.messenger.praktikum.yandex/pull/3)
+[Pull Request](https://github.com/verobragina/middle.messenger.praktikum.yandex/pull/4)
 ### Usage
 1. Installing modules
 ```
