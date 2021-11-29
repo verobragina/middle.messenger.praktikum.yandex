@@ -4,7 +4,6 @@ import {ADD_USER} from '../Chat.data';
 import {chatsController} from '../../../controllers/ChatsController';
 import {userController} from '../../../controllers/UserController';
 import {Path, router} from '../../../index';
-import './ChatHeader.scss';
 
 type TResponse = { [key: string]: any }
 

@@ -1,7 +1,6 @@
 import errorTmpl from './Error.tmpl';
 import Block from '../../classes/Block/Block';
 import {ERROR_DATA} from './Error.data';
-import './Error.scss';
 
 export default class Error extends Block {
   constructor(props?: any) {

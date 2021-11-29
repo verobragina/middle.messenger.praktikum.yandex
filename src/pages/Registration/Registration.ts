@@ -5,8 +5,6 @@ import {REGISTRATION_DATA, INPUTS, MAIN_BUTTON, SECONDARY_BUTTON} from './Regist
 import {authController} from '../../controllers/AuthController';
 import {Path, router} from '../../index';
 import {isEmptyObject} from '../../utils/utils';
-import './Registration.scss';
-
 
 export default class Registration extends Block {
   validator: FormValidator;

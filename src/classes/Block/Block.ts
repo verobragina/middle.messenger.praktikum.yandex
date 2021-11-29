@@ -1,4 +1,4 @@
-import * as Handlebars from 'handlebars';
+import Handlebars from '../../../node_modules/handlebars/dist/cjs/handlebars';
 import EventBus from '../EventBus/EventBus';
 import {css} from '../../utils/utils';
 

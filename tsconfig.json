@@ -3,9 +3,10 @@
     "target": "es6",
     "module": "es2020",
     "moduleResolution": "node",
-    "rootDir": "./src",
-    "outDir": "./dist"
   },
+  "files" :  [
+    "./src/index.ts"
+  ],
   "experimentalDecorators": true,
   "esModuleInterop": true,
   "forceConsistentCasingInFileNames": true,

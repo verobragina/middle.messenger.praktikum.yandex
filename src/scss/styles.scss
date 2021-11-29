@@ -19,3 +19,26 @@ h1 {
 }
 
 @import "form";
+
+// components
+@import "src/components/avatar/avatar";
+@import "src/components/chat/chat";
+@import "src/components/input/input";
+@import "src/components/main-button/main-button";
+@import "src/components/secondary-button/secondary-button";
+
+// pages
+@import "src/pages/Chat/Chat";
+@import "src/pages/Chat/ChatHeader/ChatHeader";
+@import "src/pages/Chat/ChatMessagesField/ChatMessagesField";
+@import "src/pages/Chat/ChatMessageInput/ChatMessageInput";
+@import "src/pages/Chat/ChatList/ChatList";
+
+@import "src/pages/Error/Error";
+
+@import "src/pages/Login/Login";
+
+@import "src/pages/Profile/Profile";
+@import "src/pages/Profile/ProfilePassword/ProfilePassword";
+
+@import "src/pages/Registration/Registration";

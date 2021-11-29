@@ -2,7 +2,6 @@ import chatMessagesFieldTmpl from './ChatMessagesField.tmpl';
 import Block from '../../../classes/Block/Block';
 import {userController} from '../../../controllers/UserController';
 import {store} from '../../../classes/Store/Store';
-import './ChatMessagesField.scss';
 
 type TResponse = { [key: string]: any };
 

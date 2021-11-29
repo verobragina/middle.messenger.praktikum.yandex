@@ -1,6 +1,5 @@
 import chatTmpl from './chat.tmpl';
 import Block from '../../classes/Block/Block';
-import './chat.scss';
 
 export default class Chat extends Block {
   constructor(props?: any) {
