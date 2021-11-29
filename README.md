@@ -6,7 +6,7 @@ User can register and login/logout in the app, create chat, add other users to c
 #### [Figma Prototype](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1)
 #### [ Heroku App](https://guarded-everglades-94366.herokuapp.com/)
 #### [Netlify](https://wonderful-davinci-8c226d.netlify.app/)
-#### [PR](https://github.com/verobragina/middle.messenger.praktikum.yandex/pull/3)
+#### [PR](https://github.com/verobragina/middle.messenger.praktikum.yandex/pull/4)
 
 ### Usage
 1. Installing modules
