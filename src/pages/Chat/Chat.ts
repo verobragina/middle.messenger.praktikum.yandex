@@ -8,7 +8,6 @@ import {
 } from './Chat.data';
 import {chatsController} from '../../controllers/ChatsController';
 import {Path, router} from '../../index';
-import './Chat.scss';
 
 export default class Chat extends Block {
   constructor(props?: any) {

@@ -12,6 +12,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.html', '.ts', '.js', '.json', '.scss'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   devServer: {
     static: {

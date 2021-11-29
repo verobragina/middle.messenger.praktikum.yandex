@@ -14,7 +14,6 @@ import {userController} from '../../controllers/UserController';
 import {store} from '../../classes/Store/Store';
 import {Path, router} from '../../index';
 import {isEmptyObject, toLowerCase} from '../../utils/utils';
-import './Profile.scss';
 
 export default class Profile extends Block {
   validator: FormValidator;

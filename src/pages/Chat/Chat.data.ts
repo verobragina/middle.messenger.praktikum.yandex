@@ -1,7 +1,7 @@
 import ChatMessageInput from './ChatMessageInput/ChatMessageInput';
 import MainButton from '../../components/main-button/main-button';
 import SecondaryButton from '../../components/secondary-button/secondary-button';
-import ChatList from './СhatList/ChatList';
+import ChatList from './ChatList/ChatList';
 import ChatHeader from './ChatHeader/ChatHeader';
 import ChatMessagesField from './ChatMessagesField/ChatMessagesField';
 

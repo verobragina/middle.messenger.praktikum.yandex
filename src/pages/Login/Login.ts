@@ -5,7 +5,6 @@ import {LOGIN_DATA, INPUTS, MAIN_BUTTON, SECONDARY_BUTTON} from './Login.data';
 import {authController} from '../../controllers/AuthController';
 import {Path, router} from '../../index';
 import {isEmptyObject} from '../../utils/utils';
-import './Login.scss';
 
 export default class Login extends Block {
   validator: FormValidator;

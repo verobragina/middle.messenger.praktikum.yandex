@@ -4,8 +4,6 @@ import Chat from '../../../components/chat/chat';
 import {webSocketAPI} from '../../../api/WebSocket';
 import {store} from '../../../classes/Store/Store';
 import {selectChat} from '../../../classes/Store/reducers';
-import './ChatList.scss';
-
 
 export default class ChatList extends Block {
   constructor(props?: any) {

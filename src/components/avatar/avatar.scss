@@ -1,6 +1,3 @@
-@import "src/scss/colors";
-@import "src/scss/mixins";
-
 .profile {
   &__avatar {
     @include flex(row, center, center);

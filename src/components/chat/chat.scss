@@ -1,6 +1,3 @@
-@import "src/scss/colors";
-@import "src/scss/mixins";
-
 .chat {
   @include flex(row, flex-start, center);
 

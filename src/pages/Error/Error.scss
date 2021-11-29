@@ -1,6 +1,3 @@
-@import "src/scss/colors";
-@import "src/scss/mixins";
-
 .error__container {
   @include flex(column, space-evenly, center);
 
